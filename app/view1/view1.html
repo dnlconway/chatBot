@@ -1,0 +1,9 @@
+<p ng-repeat="message in vm.messages">{{message}}</p>
+
+<form novalidate class="simple-form">
+    <input type="text" ng-model="vm.inputMessage" /><br />
+    <button ng-repeat="availableOption in vm.availableOptions" ng-click="vm.sendChosenOption(availableOption)">{{availableOption}}</button>
+    <input type="submit" ng-click="vm.sendMessage(vm.inputMessage)" ng-disabled="!vm.inputMessage" value="Send" />
+</form>
+
+<button ng-click="vm.clearMessages()">Clear Screen</button>
